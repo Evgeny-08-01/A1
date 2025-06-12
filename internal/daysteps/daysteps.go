@@ -25,7 +25,7 @@ func parsePackage(data string) (int, time.Duration, error) {
 		log.Println(err)
 		return 0, 0, err
 	}
-	stepsNumbers, err := strconv.Atoi(dataInput[0])
+	stepsNumbers, err:= strconv.Atoi(dataInput[0])
 	if err != nil {
 		log.Println(err)
 		return 0, 0, err

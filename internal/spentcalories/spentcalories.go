@@ -55,28 +55,6 @@ func meanSpeed(steps int, height float64, duration time.Duration) float64 {
 	}
 	return distance(steps, height) / duration.Hours()
 }
-
-func RunningSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
-	// TODO: реализовать функцию
-	if steps <= 0 || weight <= 0 || height <= 0 || duration <= 0 {
-		var errInput = errors.New("")
-
-		return 0, errInput
-	}
-	durationInMinutes := duration.Minutes()
-	calcCalories := (weight * meanSpeed(steps, height, duration) * durationInMinutes) / minInH
-	return calcCalories, nil
-}
-
-func WalkingSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
-	// TODO: реализовать функцию
-	if steps <= 0 || weight <= 0 || height <= 0 || duration <= 0 {
-		return 0, errors.New("")
-	}
-	durationInMinutes := duration.Minutes()
-	calcCalories := (weight * meanSpeed(steps, height, duration) * durationInMinutes) / minInH * walkingCaloriesCoefficient
-	return calcCalories, nil
-}
 func TrainingInfo(data string, weight, height float64) (string, error) {
 	// TODO: реализовать функцию
 	steps, activityMode, t, err := parseTraining(data)
@@ -99,5 +77,26 @@ func TrainingInfo(data string, weight, height float64) (string, error) {
 	default:
 		return "", errors.New("неизвестный тип тренировки")
 	}
+}
 
+func RunningSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
+	// TODO: реализовать функцию
+	if steps <= 0 || weight <= 0 || height <= 0 || duration <= 0 {
+		var errInput = errors.New("")
+
+		return 0, errInput
+	}
+	durationInMinutes := duration.Minutes()
+	calcCalories := (weight * meanSpeed(steps, height, duration) * durationInMinutes) / minInH
+	return calcCalories, nil
+}
+
+func WalkingSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
+	// TODO: реализовать функцию
+	if steps <= 0 || weight <= 0 || height <= 0 || duration <= 0 {
+		return 0, errors.New("")
+	}
+	durationInMinutes := duration.Minutes()
+	calcCalories := (weight * meanSpeed(steps, height, duration) * durationInMinutes) / minInH * walkingCaloriesCoefficient
+	return calcCalories, nil
 }

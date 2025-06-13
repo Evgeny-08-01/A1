@@ -1,10 +1,9 @@
 package daysteps
 
 import (
-	"go.work"
 	"errors"
 	"fmt"
-	"internal/spentcalories"
+	//"internal/spentcalories"
 	"log"
 	"strconv"
 	"strings"

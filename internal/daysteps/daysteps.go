@@ -3,7 +3,7 @@ package daysteps
 import (
 	"errors"
 	"fmt"
-	"internal/spentcalories"
+	"github.com/Evgeny-08-01/A1/tree/a1/internal/daysteps"    //"internal/spentcalories"
 	"log"
 	"strconv"
 	"strings"

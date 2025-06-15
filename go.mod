@@ -1,7 +1,7 @@
-module github.com/Yandex-Practicum/tracker
+module github.com/Evgeny-08-01/a1
 
 go 1.24.1
-
+ 
 require github.com/stretchr/testify v1.10.0
 
 require (

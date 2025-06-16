@@ -1,4 +1,4 @@
-module github.com/Evgeny-08-01/A1/tree/a1
+module github.com/Yandex-Practicum/tracker
 
 go 1.24.1
 

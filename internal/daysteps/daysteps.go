@@ -3,7 +3,7 @@ package daysteps
 import (
 	"errors"
 	"fmt"
-	"internal/spentcalories"
+	"github.com/Yandex-Practicum/tracker/internal/spentcalories"
 	"log"
 	"strconv"
 	"strings"

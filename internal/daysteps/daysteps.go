@@ -3,11 +3,12 @@ package daysteps
 import (
 	"errors"
 	"fmt"
-	"github.com/Yandex-Practicum/tracker/internal/spentcalories"
 	"log"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/Yandex-Practicum/tracker/internal/spentcalories"
 )
 
 const (
@@ -21,7 +22,7 @@ func parsePackage(data string) (int, time.Duration, error) {
 	// TODO: реализовать функцию
 	dataInput := strings.Split(data, ",")
 	if len(dataInput) != 2 {
-		err := errors.New("ошибка ввода информации")
+		err := errors.New("incorrect data entry")
 		log.Println(err)
 		return 0, 0, err
 	}
@@ -31,13 +32,13 @@ func parsePackage(data string) (int, time.Duration, error) {
 		return 0, 0, err
 	}
 	if stepsNumbers <= 0 {
-		err := errors.New("")
+		err := errors.New("incorrect data entry on the number of steps")
 		log.Println(err)
 		return 0, 0, err
 	}
 	t, err := time.ParseDuration(dataInput[1])
 	if t <= 0 {
-		err := errors.New("")
+		err := errors.New("incorrect time data entry")
 		log.Println(err)
 		return 0, 0, err
 
@@ -53,7 +54,7 @@ func DayActionInfo(data string, weight, height float64) string {
 	// TODO: реализовать функцию
 	stepsNumbers, t, err := parsePackage(data)
 	if err != nil {
-		println(err)
+		log.Println(err)
 		return ""
 	}
 	if stepsNumbers <= 0 {
